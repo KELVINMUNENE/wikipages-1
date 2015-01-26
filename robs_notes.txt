@@ -1,0 +1,39 @@
+In the rails setup lesson there are couple of things...
+
+1. "Now, we can create our databases just like before with rake db:create."
+
+  Just like before?  We haven't done this before...unless I missed something.
+
+
+2. "Now we can migrate and prepare our test database just like we did before.
+  And just like before, there's now a schema.rb file in db."
+
+  Again, haven't seen this before.  So the command to actually
+  run the migration (e.g. rake db:setup ) is something I had to search
+  for. May also want to touch on the setup of the development AND the test
+  databases.
+
+3. "We can run $ rspec to watch it fail, just like before. Let's make
+  it pass, by creating a contact.rb file in app/models"
+
+  When we run the rspec command it fails but not with a "failure"
+  condition. The command actually fails. (see below)
+
+LEARN01:wikipages learn01$ rspec
+/Users/learn01/Library/Mobile Documents/com~apple~CloudDocs/Jeff-LEARN/rails projects/wikipages/spec/models/contact_spec.rb:3:in `<top (required)>': uninitialized constant Contact (NameError)
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `block in load_spec_files'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `each'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load_spec_files'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:96:in `setup'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:84:in `run'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:69:in `run'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:37:in `invoke'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/exe/rspec:4:in `<top (required)>'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/bin/rspec:23:in `load'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/bin/rspec:23:in `<main>'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/bin/ruby_executable_hooks:15:in `eval'
+  from /Users/learn01/.rvm/gems/ruby-2.2.0/bin/ruby_executable_hooks:15:in `<main>'
+
+
+4. require "spec-helper" should now be require "rails-helper"
