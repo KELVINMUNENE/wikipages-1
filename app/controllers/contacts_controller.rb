@@ -39,8 +39,9 @@ class ContactsController < ActionController::Base
     @contact.email = params[:email]
     @contact.phone = params[:phone]
     if @contact.save
-      @contacts = Contact.all
-      render('contacts/index.html.erb')
+      # @contacts = Contact.all
+      # render('contacts/index.html.erb')
+      render('contacts/show.html.erb')
     else
       render('contacts/edit.html.erb')
     end

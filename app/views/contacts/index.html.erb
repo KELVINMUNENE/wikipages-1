@@ -1,13 +1,18 @@
-<h1>All Contacts</h1>
+<div class="container">
+  <div class="row">
 
-<table>
-  <thead><tr><th>Name</th><th>Action</th></tr>
-  <tfoot><tr><td colspan=2><button type="button"><a href="/contacts/new">Add New</a></button>
-    </td></tr></tfoot>
-  <tbody>
-  <% @contacts.each do |contact| %>
-  <tr><td><%= contact.name %></td><td><a href="/contacts/<%= contact.id %>">View</a>
-                          <a href="/contacts/<%= contact.id %>/edit">Edit</a></td><tr>
-  <% end %>
-</tbody>
-</table>
+    <h1>All Contacts</h1>
+
+    <table class="table table-hover">
+      <thead><tr><th>Name</th></tr>
+      <tfoot><tr><td colspan=2><button type="button"><a href="/contacts/new">Add New</a></button>
+        </td></tr></tfoot>
+      <tbody>
+      <% @contacts.each do |contact| %>
+      <tr><td><a href="contacts/<%= contact.id %>/edit"><%= contact.name %></a></td><tr>
+      <% end %>
+    </tbody>
+    </table>
+
+  </div>
+</div>

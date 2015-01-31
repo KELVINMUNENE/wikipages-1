@@ -1,12 +1,17 @@
-<h1><%= @contact.name %></h1>
+<div class="container">
 
-<p>Phone: <%= @contact.phone %></p>
+  <div class="row">
+    <h1><%= @contact.name %></h1>
 
-<p>Email: <%= @contact.email %></p>
+    <p>Phone: <%= @contact.phone %></p>
 
-<p><a href="/contacts/<%= @contact.id %>"
-  data-confirm="You sure?"
-  data-method="delete"
-  rel="nofollow">Delete</a></p>
+    <p>Email: <%= @contact.email %></p>
 
-<p><a href="/contacts">Return to contact listing</a></p>
+    <p><a href="/contacts/<%= @contact.id %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></p>
+
+      <p><a href="/contacts">Return to contact listing</a></p>
+    </div>
+  </div>
