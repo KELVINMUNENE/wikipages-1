@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20150126223524) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "contact_id"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state",          limit: 2
+    t.string   "zip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
     t.string   "phone"
@@ -24,4 +34,5 @@ ActiveRecord::Schema.define(version: 20150126223524) do
     t.datetime "updated_at"
   end
 
+  add_foreign_key "addresses", "contacts", name: "contacts_fk", on_delete: :cascade
 end

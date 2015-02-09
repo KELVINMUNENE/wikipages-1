@@ -22,7 +22,7 @@ class ContactsController < ActionController::Base
   end
 
   def create
-    @contact = Contact.create(
+    @contact = Contact.create( :id => params[:id],
     :name => params[:name],
     :email => params[:email],
     :phone => params[:phone])
@@ -39,8 +39,6 @@ class ContactsController < ActionController::Base
     @contact.email = params[:email]
     @contact.phone = params[:phone]
     if @contact.save
-      # @contacts = Contact.all
-      # render('contacts/index.html.erb')
       render('contacts/show.html.erb')
     else
       render('contacts/edit.html.erb')
