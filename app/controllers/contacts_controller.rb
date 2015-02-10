@@ -22,10 +22,7 @@ class ContactsController < ActionController::Base
   end
 
   def create
-    @contact = Contact.create( :id => params[:id],
-    :name => params[:name],
-    :email => params[:email],
-    :phone => params[:phone])
+    @contact = Contact.create( params[:contact] )
     if @contact.save
       render('contacts/success.html.erb')
     else
@@ -35,9 +32,10 @@ class ContactsController < ActionController::Base
 
   def update
     @contact = Contact.find(params[:id])
-    @contact.name = params[:name]
-    @contact.email = params[:email]
-    @contact.phone = params[:phone]
+    contact_info = params[:contact]
+    @contact.name = contact_info[:name]
+    @contact.email = contact_info[:email]
+    @contact.phone = contact_info[:phone]
     if @contact.save
       render('contacts/show.html.erb')
     else

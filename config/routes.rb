@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :contacts
+  match('contacts/delete/:id', {:via => :get, :to => 'contacts#destroy'})
   # match('contacts/new', {:via => :get, :to => 'contacts#new'})
   # match('contacts/', {:via => :get, :to => 'contacts#index'})
   # match('contacts/', {:via => :post, :to => 'contacts#create'})

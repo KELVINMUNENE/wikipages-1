@@ -9,7 +9,7 @@
         </td></tr></tfoot>
       <tbody>
       <% @contacts.each do |contact| %>
-      <tr><td><a href="contacts/<%= contact.id %>/edit"><%= contact.name %></a></td><tr>
+      <tr><td><a href="/contacts/<%= contact.id %>/edit"><%= contact.name %></a></td><tr>
       <% end %>
     </tbody>
     </table>

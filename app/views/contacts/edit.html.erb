@@ -14,20 +14,22 @@
 
   <div class="row">
     <form action="/contacts/<%= @contact.id %>" method="post">
-      <input name="_method" type="hidden" value="patch">
+      <input id="_method" name="_method" type="hidden" value="patch">
       <div class="form-group">
         <label for="contact_name">Name</label>
-        <input id="contact_name" name="name" type="text" value="<%= @contact.name %>">
+        <input id="contact_name" name="contact[name]" type="text" value="<%= @contact.name %>">
       </div>
       <div class="form-group">
         <label for="contact_phone">Phone</label>
-        <input id="contact_phone" name="phone" type="text" value="<%= @contact.phone %>">
+        <input id="contact_phone" name="contact[phone]" type="text" value="<%= @contact.phone %>">
       </div>
       <div class="form-group">
         <label for="contact_email">Email</label>
-        <input id="contact_email" name="email" type="text" value="<%= @contact.email %>">
+        <input id="contact_email" name="contact[email]" type="text" value="<%= @contact.email %>">
       </div>
-      <button class="btn btn-primary">Update Contact</button>
+      <input id="id" name="id" type="hidden" value="<%= @contact.id %>">
+      <button id="upd-btn" type="submit" class="btn btn-group btn-primary">Update Contact</button>
+      <button id="del-btn" type="button" class="btn btn-group btn-primary">Delete Contact</button>
       <p><a href="/contacts">Return to contact listing</a></p>
     </form>
   </div>
